@@ -2,7 +2,7 @@ package routers
 
 import (
 
-	_ "github.com/kd2718/goweb/auth/router"
+	//_ "github.com/kd2718/goweb/auth/"
 	//"github.com/astaxie/beego"
 )
 

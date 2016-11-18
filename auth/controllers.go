@@ -3,8 +3,6 @@ package auth
 import (
 	"github.com/astaxie/beego"
 	"fmt"
-	//"github.com/kd2718/goweb/vendor/github.com/astaxie/beego"
-	//"github.com/astaxie/beego"
 )
 
 type HomeController struct {
