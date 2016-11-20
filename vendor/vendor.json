@@ -33,6 +33,12 @@
 			"revisionTime": "2016-10-30T02:48:15Z"
 		},
 		{
+			"checksumSHA1": "XQUio+w0Elm2zkJpvI9xFSdC5/c=",
+			"path": "github.com/astaxie/beego/orm",
+			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
+			"revisionTime": "2016-10-30T02:48:15Z"
+		},
+		{
 			"checksumSHA1": "R797q1pCbp086SraUETxX1rsJYw=",
 			"path": "github.com/astaxie/beego/session",
 			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
@@ -49,6 +55,18 @@
 			"path": "github.com/astaxie/beego/utils",
 			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
 			"revisionTime": "2016-10-30T02:48:15Z"
+		},
+		{
+			"checksumSHA1": "avqi4lkviHdrNJ92cXCwrw9x870=",
+			"path": "github.com/lib/pq",
+			"revision": "d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b",
+			"revisionTime": "2016-11-03T02:43:54Z"
+		},
+		{
+			"checksumSHA1": "xppHi82MLqVx1eyQmbhTesAEjx8=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b",
+			"revisionTime": "2016-11-03T02:43:54Z"
 		}
 	],
 	"rootPath": "github.com/kd2718/goweb"

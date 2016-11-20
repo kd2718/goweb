@@ -1,8 +1,9 @@
-package auth
+package controllers
 
 import (
-	"github.com/astaxie/beego"
 	"fmt"
+	"github.com/astaxie/beego"
+	"github.com/kd2718/goweb/models"
 )
 
 type HomeController struct {
@@ -16,7 +17,7 @@ func (ctrl *HomeController) Get() {
 }
 
 func (ctrl *HomeController) Post() {
-	var u MyUser
+	var u models.MyUser
 	ctrl.ParseForm(&u)
 	fmt.Println(u)
 	ctrl.Ctx.WriteString(u.String())

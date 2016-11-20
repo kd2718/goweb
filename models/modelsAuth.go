@@ -1,10 +1,10 @@
-package auth
+package models
 
 import "fmt"
 
-type MyUser struct{
-	Id int `form:"-"`
-	Email string  `form:"email"`
+type MyUser struct {
+	Id       int    `form:"-"`
+	Email    string `form:"email"`
 	Password string `form:"password"`
 }
 
