@@ -37,6 +37,12 @@
 			"revisionTime": "2016-10-30T02:48:15Z"
 		},
 		{
+			"checksumSHA1": "ogc7IRWwherJc5w/1yY1xFjAqJ8=",
+			"path": "github.com/astaxie/beego/migration",
+			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
+			"revisionTime": "2016-10-30T02:48:15Z"
+		},
+		{
 			"checksumSHA1": "XQUio+w0Elm2zkJpvI9xFSdC5/c=",
 			"path": "github.com/astaxie/beego/orm",
 			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
@@ -57,6 +63,12 @@
 		{
 			"checksumSHA1": "fRJk3RZPPz6ovbautfsfxAk+CrI=",
 			"path": "github.com/astaxie/beego/utils",
+			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
+			"revisionTime": "2016-10-30T02:48:15Z"
+		},
+		{
+			"checksumSHA1": "lQ4PUWdKDGHHK9hgwRv0USTHkBI=",
+			"path": "github.com/astaxie/beego/validation",
 			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
 			"revisionTime": "2016-10-30T02:48:15Z"
 		},
