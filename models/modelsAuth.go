@@ -6,10 +6,10 @@ import (
 )
 
 type MyUser struct {
-	Id       int    `form:"-"`
-	Email    string `form:"email" valid:"Required"`
-	Password string `form:"password" valid:"Required"`
-	password2 string `form:"-" valid:"Required"`
+	Id        uint64 `form:"-"`
+	Email     string `orm:"unique" form:"email" valid:"Required"`
+	Password  string `form:"password" valid:"Required"`
+	password2 string `orm:"-" valid:"Required"`
 }
 
 func (self *MyUser) String() string {
@@ -18,9 +18,8 @@ func (self *MyUser) String() string {
 }
 
 func (u *MyUser) TableName() string {
-    return "auth_user"
+	return "auth_user"
 }
-
 
 func (u *MyUser) Valid(v *validation.Validation) {
 	//if u.Password != u.password2 {
