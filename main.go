@@ -16,34 +16,27 @@ type Test struct {
 }
 
 func init() {
+	orm.RegisterDataBase("default", "mysql", "goweb:goweb@/goweb?charset=utf8")
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterModel(new(models.MyUser), new(Test))
-	orm.RegisterDataBase("default", "mysql", "goweb:goweb@/goweb?charset=utf8")
+
 }
 
 func main() {
 	fmt.Println("here we go")
 
-	// register model
-	//name := "default"
-	//
-	//// Drop table and re-create.
-	//force := true
-	//
-	//// Print log.
-	//verbose := true
+	name := "default"
 
-	// Error.
-	//err := orm.RunSyncdb(name, force, verbose)
-	//if err != nil {
-	//	fmt.Println(err)
-	//}
+	// Drop table and re-create.
+	force := false
 
-	// set default database
-	//beego.AppConfig.String("pguser")
-	//beego.AppConfig.String("pgpass")
-	//beego.AppConfig.String("pgurls")
-	//beego.AppConfig.String("pgdb")
+	// Print log.
+	verbose := true
+
+	err := orm.RunSyncdb(name, force, verbose)
+	if err != nil {
+		fmt.Println("syncdb err", err)
+	}
 
 	beego.Run()
 }

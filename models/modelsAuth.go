@@ -7,9 +7,9 @@ import (
 
 type MyUser struct {
 	Id        uint64 `form:"-"`
-	Email     string `orm:"unique" form:"email" valid:"Required"`
-	Password  string `form:"password" valid:"Required"`
-	password2 string `orm:"-" valid:"Required"`
+	Email     string `orm:"unique;size(100)" form:"email" valid:"Required"`
+	Password  string `orm:"size(102)" form:"password" valid:"Required"`
+	password2 string `orm:"-" form:"password2" valid:"Required"`
 }
 
 func (self *MyUser) String() string {
@@ -22,7 +22,8 @@ func (u *MyUser) TableName() string {
 }
 
 func (u *MyUser) Valid(v *validation.Validation) {
-	//if u.Password != u.password2 {
-	//	v.SetError("password", "Passwords do not match")
-	//}
+	if u.Password != u.password2 {
+		fmt.Println("passwords don't match", u.Password, u.password2)
+		v.SetError("password", "Passwords do not match")
+	}
 }

@@ -21,12 +21,20 @@ func (ctrl *HomeController) Get() {
 
 func (ctrl *HomeController) Post() {
 	o := orm.NewOrm()
-	var u models.MyUser
-	ctrl.ParseForm(&u)
-	fmt.Println(u)
-	err := o.Read(&u, "Password")
+	var input models.MyUser
+	ctrl.ParseForm(&input)
+	fmt.Println(input)
+	extracted := models.MyUser{Email: input.Email}
+	err := o.Read(&extracted, "Email")
+
 	fmt.Println("err", err)
-	ctrl.Ctx.WriteString(u.String())
+
+	fmt.Println("extracted pass", extracted.Password, "input pass", input.Password)
+
+	if extracted.Password != input.Password {
+		ctrl.Ctx.WriteString("BAD!!! passwords don't match")
+	}
+	ctrl.Ctx.WriteString(extracted.String())
 	return
 }
 
@@ -42,17 +50,22 @@ func (ctrl *RegisterController) Post() {
 	var u models.MyUser
 	ctrl.ParseForm(&u)
 	log.Println("test in register...", valid)
-	//b, err := valid.Valid(&u)
-	//fmt.Println("registered user:", u, u.Password)
-	//if err != nil {
-	//	fmt.Println("an error occured", err)
-	//}
-	//if !b {
-	//	fmt.Println("bad stuff occured", b)
-	//for _, err := range valid.Errors {
-	//    log.Println(err.Key, err.Message)
-	//}
-	o.Insert(&u)
-	log.Println("inserted u", u)
+	b, err := valid.Valid(&u)
+	fmt.Println("registered user:", u, u.Password)
+	if err != nil {
+		fmt.Println("an error occured", err)
+	}
+	if !b {
+		fmt.Println("bad stuff occured", b)
+	}
+	for _, err := range valid.Errors {
+	    log.Println(err.Key, err.Message)
+	}
+	count, err := o.Insert(&u)
+	if err != nil {
+		fmt.Println("error inserting into db", err)
+	}
+
+	log.Println("inserted u", u, "total inserted:", count)
 	ctrl.Data["u"] = &u
 }
