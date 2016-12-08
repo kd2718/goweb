@@ -1,0 +1,15 @@
+{{template "base.tpl"}}
+
+{{define "content"}}
+
+<h1>Enter your email and password</h1>
+        <form method="post">
+                <input type="text" name="email" placeholder="name@email.com">
+                <input name="password" type="password" placeholder="password">
+                <input type="submit" name="submit" value="Login">
+
+        </form>
+
+        <p><a href="/register/">Regiseter</a></p>
+
+{{end}}

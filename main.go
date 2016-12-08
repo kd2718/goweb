@@ -27,7 +27,7 @@ func main() {
 
 	name := "default"
 
-	// Drop table and re-create.
+	//if true,  Drop table and re-create.
 	force := false
 
 	// Print log.
