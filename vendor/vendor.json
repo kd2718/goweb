@@ -49,10 +49,10 @@
 			"revisionTime": "2016-10-30T02:48:15Z"
 		},
 		{
-			"checksumSHA1": "R797q1pCbp086SraUETxX1rsJYw=",
+			"checksumSHA1": "fMwzAGPXXCLFJV4zBIJD+DBAa08=",
 			"path": "github.com/astaxie/beego/session",
-			"revision": "b635af5a8cd798ae9ede1adb6f9472fa87361168",
-			"revisionTime": "2016-10-30T02:48:15Z"
+			"revision": "90999717dda6193c6f970eec52e289b0a9e74998",
+			"revisionTime": "2016-12-05T15:14:26Z"
 		},
 		{
 			"checksumSHA1": "rxxln8GHFToVnaEJz4JMv0WbaKc=",

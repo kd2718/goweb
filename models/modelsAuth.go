@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"github.com/astaxie/beego/validation"
+	"github.com/astaxie/beego/orm"
 )
 
 type MyUser struct {
@@ -22,8 +23,13 @@ func (u *MyUser) TableName() string {
 }
 
 func (u *MyUser) Valid(v *validation.Validation) {
+	o := orm.NewOrm()
 	if u.Password != u.Password2 {
 		fmt.Println("passwords don't match", u.Password, u.Password2)
 		v.SetError("password", "Passwords do not match")
+	}
+	err := o.Read(&MyUser{Email: u.Email}, "Email")
+	if err == nil {
+		v.SetError("email", "A user with that email already exsits.")
 	}
 }

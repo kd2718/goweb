@@ -76,7 +76,7 @@ func (ctrl *RegisterController) Post() {
 	}
 	for _, err := range valid.Errors {
 	    log.Println(err.Key, err.Message)
-		errors["blah"] = err.Message
+		errors[err.Key] = err.Message
 		//ctrl.Data["errors"] = &errors
 		//ctrl.TplName = "new_register.html"
 		//return
